@@ -14,6 +14,8 @@ import { SigninComponent } from './authentication/signin/signin.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
 import { LayoutComponent } from './user/layout/layout.component';
+import { AddReviewSkipTestsComponent } from './main/add-review-skip-tests/add-review-skip-tests.component';
+import { MainLayoutSkipTestsComponent } from './main/main-layout-skip-tests/main-layout-skip-tests.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { LayoutComponent } from './user/layout/layout.component';
     SignupComponent,
     ResetPasswordComponent,
     LayoutComponent,
+    AddReviewSkipTestsComponent,
+    MainLayoutSkipTestsComponent,
   ],
   imports: [
     BrowserModule,

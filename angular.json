@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "masterTemplate"
+  "defaultProject": "masterTemplate",
+  "cli": {
+    "analytics": false
+  }
 }
