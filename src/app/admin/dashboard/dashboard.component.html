@@ -1,6 +1,80 @@
-<nb-layout>
-    <nb-layout-column>
-        <button nbButton>Thats a button</button>
+<div class="row">
+    <div class="col-md-6">
+        <nb-card accent="danger">
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="icon-container">
+                            <nb-icon icon="people" style="font-size: 5rem;width: 100%;" status="control"></nb-icon>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="row">
+                            <div class="col-6">
+                                <h3>Total Users : </h3>
+                            </div>
 
-    </nb-layout-column>
-</nb-layout>
+                            <div class="col-6 mx-auto">
+                                <p class="figure">{{usersList.length| number:'2.0'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+
+    <div class="col-md-6">
+        <nb-card accent="danger">
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="icon-container">
+                            <nb-icon icon="browser" style="font-size: 5rem;width: 100%;" status="control"></nb-icon>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="row">
+                            <div class="col-6">
+                                <h3>Total Blogs : </h3>
+                            </div>
+
+                            <div class="col-6 mx-auto">
+                                <p class="figure">{{blogsList.length| number:'2.0'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <nb-card accent="success">
+                
+            <nb-card-body>
+                <div id="blogByDate" style="height: 20rem;"></div>
+            </nb-card-body>
+          </nb-card>
+    </div>
+    <div class="col-md-7">
+        <nb-card accent="success">
+            
+            <nb-card-body>
+                <!-- <canvas baseChart width="400" height="400"
+                [datasets]="userChartData['plotData']"
+                [labels]="userChartData['labels']"
+                [options]="userChartData['options']"
+                [legend]="userChartData['legend']"
+                [chartType]="userChartData['chartType']">
+            </canvas> -->
+            <div id="regByDate" style="height: 20rem;"></div>
+            <!-- <div>
+                <canvas id="myChart"></canvas>
+              </div> -->
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

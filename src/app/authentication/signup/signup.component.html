@@ -1,3 +1,43 @@
-<div class="col-md-10">
+<div class="col-md-6 mt-5 mx-auto">
+    <div class="card mt-5 ">
+        <div class="card-body">
+            <form [formGroup]="signupform" (ngSubmit)="submitSignupForm()">
+                <h3>Signup Here</h3>
+                <mat-form-field class="mt-5 w-100" appearance="fill">
+                    <mat-label>Full Name</mat-label>
+                    <input type="text" matInput formControlName="fullname">
+                </mat-form-field>
 
+                <mat-form-field class="mt-5 w-100" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput formControlName="email">
+                </mat-form-field>
+
+
+                <mat-form-field class="mt-5 w-100" appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput formControlName="password">
+                </mat-form-field>
+
+                <mat-form-field class="mt-5 w-100" appearance="fill">
+                    <mat-label>Confirm Password</mat-label>
+                    <input type="password" matInput formControlName="confirm">
+                </mat-form-field>
+
+                <mat-form-field class="mt-5 w-100" appearance="fill">
+                    <mat-label>Age</mat-label>
+                    <input type="number" matInput formControlName="age">
+                </mat-form-field>
+
+                <label class="mt-3">Upload Image</label><br>
+                <input type="file" class="form-control" (change)="uploadAvatar($event)">
+
+                <img [src]="imgURL" *ngIf="imgURL" alt="" class="mt-4">
+
+                <button class="col-12 mt-5 btn mx-auto">Submit</button>
+            </form>
+
+            <a [routerLink]="['/app/signin']" routerLinkActive="router-link-active">Login Instead</a>
+        </div>
+    </div>
 </div>

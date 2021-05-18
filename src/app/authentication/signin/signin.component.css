@@ -1,0 +1,12 @@
+button {
+    width: 150px;
+    height: 40px;
+    color: rgb(14, 13, 13);
+    background-color: rgb(199, 194, 194);
+    border-radius: 5px;
+    box-shadow: 5px blue;
+}
+
+.card {
+    background-color: rgba(108, 232, 236, 0.151);
+}
