@@ -4,15 +4,37 @@
             <nb-card-body>
                 <h3>Add Your Review</h3>
 
-                <mat-form-field appearance="outline" class="mt-4">
-                    <mat-label>Title</mat-label>
-                    <input type="text" matInput>
-                </mat-form-field>
-
-                <mat-form-field appearance="outline" class="mt-4">
-                    <mat-label>Description</mat-label>
-                    <textarea type="text" matInput></textarea>
-                </mat-form-field>
+                <form [formGroup]="reviewForm" (ngSubmit)="submitReview()">
+                    <mat-form-field appearance="outline" class="mt-4 w-100">
+                        <mat-label>Title</mat-label>
+                        <input type="text" matInput formControlName="title">
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline" class="mt-1 w-100">
+                        <mat-label>Description</mat-label>
+                        <textarea rows="6" type="text" matInput formControlName="description"></textarea>
+                    </mat-form-field>
+    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Location</h4>
+                            <hr class="mb-3">
+                            <button nbButton *ngIf="!setLocation" class="w-100" (click)="captureLocation()">Capture</button>
+                            <div class="location" *ngIf="setLocation">
+                            <p class="lat">{{Coords.latitude}}</p>
+                            <p class="long">{{Coords.longitude}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Internet Speed</h4>
+                            <hr class="mb-3">
+                            <button nbButton *ngIf="!setSpeed" class="w-100">Capture</button>
+                            <p class="speed" *ngIf="setSpeed"></p>
+                        </div>
+                    </div>
+    
+                    <button nbButton class="w-100 mt-5">Submit</button>
+                </form>
 
             </nb-card-body>
         </nb-card>

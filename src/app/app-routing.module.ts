@@ -9,9 +9,10 @@ import { SigninComponent } from './authentication/signin/signin.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { MainLayoutComponent } from './main/main-layout/main-layout.component';
 import { AddReviewComponent } from './main/add-review/add-review.component';
+import { SearchLocationComponent } from './search-location/search-location.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/app/signin', pathMatch: 'full' },
+  { path: '', redirectTo: '/search', pathMatch: 'full' },
   {
     path: 'admin',
     component: AdminLayout,
@@ -20,7 +21,7 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserLayout,
-    children: [],
+    children: [{ path: 'addreview', component: AddReviewComponent }],
   },
   {
     path: 'app',
@@ -35,7 +36,7 @@ const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: 'addreview', component: AddReviewComponent },
+      { path: 'search', component: SearchLocationComponent },
       // { path: 'listreview', component: listrevi },
     ],
   },

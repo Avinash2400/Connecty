@@ -5,7 +5,6 @@ import {
   NbButtonModule,
   NbCardModule,
   NbIconModule,
-  NbMenuModule,
   NbSidebarModule,
   NbUserModule,
 } from '@nebular/theme';
@@ -15,7 +14,6 @@ import {
     NbCardModule,
     NbButtonModule,
     NbSidebarModule,
-    NbMenuModule,
     NbCardModule,
     NbIconModule,
     NbActionsModule,

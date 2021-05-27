@@ -2,10 +2,12 @@ const mongoose = require('../connection');
 
 const schema = mongoose.Schema({
    title: String,
+   description: String,
    data: Object,
-   user: { types: mongoose.Types.ObjectId, ref: "Users" },
-   reply: [{ types: mongoose.Types.ObjectId, ref: "reviews" }]
-
+   user: { type: mongoose.Types.ObjectId, ref: "Users" },
+   reply: [{ type: mongoose.Types.ObjectId, ref: "reviews" }],
+   upvotes: Array,
+   downvotes: Array,
 })
 
 

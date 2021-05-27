@@ -16,14 +16,14 @@ export class LayoutComponent implements OnInit {
       link: 'profile',
     },
     {
-      title: 'Manage Your Blogs',
+      title: 'Manage Your Reviews',
       icon: 'person-outline',
-      link: 'manageblog',
+      link: 'managereview',
     },
     {
-      title: 'Create New Blog',
+      title: 'Add new Review',
       icon: 'person-outline',
-      link: 'newblog',
+      link: 'addreview',
     },
   ];
   url = app_config.api_url + '/';
