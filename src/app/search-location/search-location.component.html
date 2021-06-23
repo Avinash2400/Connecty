@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-    <div class="col-md-7">
+    <div class="col-md-12">
         <nb-card>
             <nb-card-body>
                 <mat-form-field class="w-100" appearance="outline">
@@ -13,7 +13,7 @@
         <nb-card class="mt-4" *ngIf="reviewList">
             <nb-card-body>
                 <div class="review mt-5" *ngFor="let review of reviewList">
-                    
+
                     <div class="row">
                         <div class="col-md-8" style="border-right: 1px solid rgb(226, 226, 226);">
                             <h3>{{review.title}}</h3>
@@ -21,8 +21,14 @@
                         </div>
                         <div class="col-md-4">
                             <nb-card accent="danger">
-                                <nb-card-body>
+                                <nb-card-body style="height: 550px;">
                                     <h3>Speed</h3>
+                                    <div style="margin: auto;">
+                                        <rg-gauge-chart [canvasWidth]="300" [needleValue]="65"
+                                            [centralLabel]="'100 mb/s'" [options]="options" [bottomLabel]="'FAST'">
+                                        </rg-gauge-chart>
+                                    </div>
+
                                 </nb-card-body>
                             </nb-card>
                             <nb-card accent="primary">
@@ -32,7 +38,7 @@
                             </nb-card>
                         </div>
                     </div>
-                    
+
                 </div>
             </nb-card-body>
         </nb-card>

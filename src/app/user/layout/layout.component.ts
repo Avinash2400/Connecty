@@ -25,6 +25,11 @@ export class LayoutComponent implements OnInit {
       icon: 'person-outline',
       link: 'addreview',
     },
+    {
+      title: 'Add Query',
+      icon: 'person-outline',
+      link: 'addquery',
+    },
   ];
   url = app_config.api_url + '/';
   title = app_config.projectTitle;

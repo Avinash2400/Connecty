@@ -10,6 +10,15 @@ import { ReviewService } from '../services/review.service';
 })
 export class SearchLocationComponent implements OnInit {
   reviewList;
+  options = {
+    hasNeedle: true,
+    needleColor: 'gray',
+    needleUpdateSpeed: 1000,
+    arcColors: ['rgb(44, 151, 222)', 'lightgray'],
+    arcDelimiters: [30],
+    rangeLabel: ['0', '100'],
+    needleStartValue: 50,
+  };
 
   constructor(
     private reviewService: ReviewService,

@@ -1,6 +1,6 @@
 <div class="col-md-11 mx-auto">
 
-    <nb-card accent="primary" *ngIf="formReady" ngsReveal>
+    <nb-card accent="primary" *ngIf="formReady">
         <nb-card-header>
             <p class="h4">Manage Your Profile</p>
         </nb-card-header>
@@ -26,7 +26,7 @@
                             <input type="number" matInput formControlName="age">
                         </mat-form-field>
                         <button nbButton status="primary" hero class="mt-3">Update</button>
-                        
+
                     </form>
                 </div>
             </div>
@@ -54,7 +54,8 @@
                 <input type="text" matInput #conpass>
             </mat-form-field>
 
-            <button nbButton status="danger" hero class="mt-3" (click)="updatePassword(newpass.value, conpass.value)" >Update</button>
+            <button nbButton status="danger" hero class="mt-3"
+                (click)="updatePassword(newpass.value, conpass.value)">Update</button>
 
 
         </nb-card-body>

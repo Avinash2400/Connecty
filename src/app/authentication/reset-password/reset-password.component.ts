@@ -67,7 +67,6 @@ export class ResetPasswordComponent implements OnInit {
             title: 'Success',
             text: 'Successfully updated your password',
             icon: 'success',
-            background: '#151a30',
           }).then(() => {
             this.router.navigate(['/app/login']);
           });
@@ -95,7 +94,6 @@ export class ResetPasswordComponent implements OnInit {
           title: 'OOps!!',
           text: 'Enter your Registered Email',
           icon: 'error',
-          background: '#151a30',
         }).then(() => {
           return;
         });

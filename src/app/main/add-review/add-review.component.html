@@ -9,30 +9,41 @@
                         <mat-label>Title</mat-label>
                         <input type="text" matInput formControlName="title">
                     </mat-form-field>
-    
+
+                    <mat-form-field appearance="outline" class="mt-4 w-100">
+                        <mat-label>Provider Description</mat-label>
+                        <input type="text" matInput formControlName="provider">
+                    </mat-form-field>
+
                     <mat-form-field appearance="outline" class="mt-1 w-100">
                         <mat-label>Description</mat-label>
                         <textarea rows="6" type="text" matInput formControlName="description"></textarea>
                     </mat-form-field>
-    
+
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Location</h4>
                             <hr class="mb-3">
-                            <button nbButton *ngIf="!setLocation" class="w-100" (click)="captureLocation()">Capture</button>
+                            <button type="button" nbButton *ngIf="!setLocation" class="w-100"
+                                (click)="captureLocation()">Capture</button>
                             <div class="location" *ngIf="setLocation">
-                            <p class="lat">{{Coords.latitude}}</p>
-                            <p class="long">{{Coords.longitude}}</p>
+                                <p class="lat">{{Coords.latitude}}</p>
+                                <p class="long">{{Coords.longitude}}</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" style="height: 550px;">
                             <h4>Internet Speed</h4>
                             <hr class="mb-3">
-                            <button nbButton *ngIf="!setSpeed" class="w-100">Capture</button>
-                            <p class="speed" *ngIf="setSpeed"></p>
+                            <button type="button" nbButton *ngIf="!setSpeed" class="w-100"
+                                (click)="captureSpeed()">Capture</button>
+                            <div class="speed" *ngIf="setSpeed">
+                                <rg-gauge-chart [canvasWidth]="300" [needleValue]="Speed" [centralLabel]="Speed+' mb/s'"
+                                    [options]="options" [bottomLabel]="'FAST'">
+                                </rg-gauge-chart>
+                            </div>
                         </div>
                     </div>
-    
+
                     <button nbButton class="w-100 mt-5">Submit</button>
                 </form>
 

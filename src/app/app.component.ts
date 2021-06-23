@@ -15,7 +15,4 @@ export class AppComponent {
     private speedtestService: SpeedTestService
   ) {}
 
-  checkSpeed() {
-    this.speedtestService.testSpeed();
-  }
 }

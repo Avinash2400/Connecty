@@ -37,19 +37,32 @@ router.get('/getbyid/:id', (req, res) => {
             console.error(err);
             res.status(500).json(err);
         })
-    })
+})
 
-    router.get('/getbyfullname/:fullname', (req, res) => {
-    
-        Model.find({fullname:req.params.fullname})
-            .then(data => {
-                console.log('user fetched by id');
-                res.status(200).json(data);
-            })
-            .catch(err => {
-                console.error(err);
-                res.status(500).json(err);
-            })
+router.get('/getbyfullname/:fullname', (req, res) => {
+
+    Model.find({ fullname: req.params.fullname })
+        .then(data => {
+            console.log('user fetched by id');
+            res.status(200).json(data);
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json(err);
+        })
+})
+
+router.get('/getall', (req, res) => {
+
+    Model.find({})
+        .then(data => {
+            console.log('user fetched');
+            res.status(200).json(data);
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json(err);
+        })
 })
 
 module.exports = router;

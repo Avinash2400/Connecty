@@ -18,6 +18,10 @@ export class ReviewService {
     return this.http.get(this.url + '/getbyid/' + id);
   }
 
+  getByUser(id: String) {
+    return this.http.get(this.url + '/getbyuser/' + id);
+  }
+
   deleteReview(id) {
     return this.http.delete(this.url + '/delete/' + id);
   }

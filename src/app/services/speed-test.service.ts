@@ -8,21 +8,20 @@ export class SpeedTestService {
     'https://github.com/m-triple-m/test-repo/raw/main/speed_test.jpg';
   constructor() {}
 
-  testSpeed() {
+  testSpeed(onload) {
     var time_start, end_time;
 
     // The size in bytes
-    var downloadSize = 5340564;
+    
     var downloadImgSrc = new Image();
 
-    downloadImgSrc.onload = () => {
-      end_time = new Date().getTime();
-      this.displaySpeed(time_start, end_time, downloadSize);
-    };
+
     time_start = new Date().getTime();
     downloadImgSrc.src = this.fileToTest;
-    document.write('time start: ' + time_start);
-    document.write('<br>');
+
+    console.log('time start: ' + time_start);
+    return downloadImgSrc.onload = onload;
+    
   }
 
   displaySpeed(time_start, end_time, downloadSize) {
@@ -34,14 +33,17 @@ export class SpeedTestService {
     let bps = parseFloat((loadedBits / timeDuration).toFixed(2));
     let speedInKbps = parseFloat((bps / 1024).toFixed(2));
     let speedInMbps = (speedInKbps / 1024).toFixed(2);
-    console.log(
-      'Your internet connection speed is: \n' +
-        bps +
-        ' bps\n' +
-        speedInKbps +
-        ' kbps\n' +
-        speedInMbps +
-        ' Mbps\n'
-    );
+    
+    // console.log(
+    //   'Your internet connection speed is: \n' +
+    //     bps +
+    //     ' bps\n' +
+    //     speedInKbps +
+    //     ' kbps\n' +
+    //     speedInMbps +
+    //     ' Mbps\n'
+    // );
+
+    return speedInMbps;
   }
 }

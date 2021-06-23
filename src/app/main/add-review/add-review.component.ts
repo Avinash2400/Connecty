@@ -15,8 +15,18 @@ export class AddReviewComponent implements OnInit {
   setLocation = false;
   setSpeed = false;
   Coords = {};
-  Speed = 0;
+  Speed = '';
   reviewForm;
+
+  options = {
+    hasNeedle: true,
+    needleColor: 'gray',
+    needleUpdateSpeed: 1000,
+    arcColors: ['rgb(44, 151, 222)', 'lightgray'],
+    arcDelimiters: [30],
+    rangeLabel: ['0', '100'],
+    needleStartValue: 50,
+  };
 
   constructor(
     private speedService: SpeedTestService,
@@ -40,6 +50,7 @@ export class AddReviewComponent implements OnInit {
       reply: Array,
       upvotes: Array,
       downvotes: Array,
+      provider: '',
     });
   }
 
@@ -56,12 +67,26 @@ export class AddReviewComponent implements OnInit {
     let data = {};
     data['speed'] = this.Speed;
     data['location'] = this.Coords;
+    data['provider'] = formdata.provider;
 
     formdata.data = data;
 
     this.reviewService.addReview(formdata).subscribe((data) => {
       console.log(data);
       this.toastr.success('Reviews Posted!', 'Successfully!');
+    });
+  }
+
+  captureSpeed() {
+    let downloadSize = 5340564;
+    let start = new Date().getTime();
+    this.speedService.testSpeed(() => {
+      this.Speed = this.speedService.displaySpeed(
+        start,
+        new Date().getTime(),
+        downloadSize
+      );
+      this.setSpeed = true;
     });
   }
 }
