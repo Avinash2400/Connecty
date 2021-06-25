@@ -18,6 +18,7 @@ import {
     NbIconModule,
     NbActionsModule,
     NbUserModule,
+    NbIconModule,
   ],
   imports: [CommonModule],
 })

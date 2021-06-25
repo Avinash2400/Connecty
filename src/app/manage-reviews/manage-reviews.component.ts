@@ -50,10 +50,7 @@ export class ManageReviewsComponent implements OnInit {
       if (result.isConfirmed) {
         this.reviewService.deleteReview(id).subscribe((res) => {
           console.log(res);
-          this.toastrService.info({
-            title: 'Deleted',
-            message: 'Review Successfully deleted',
-          });
+          this.toastrService.info('Review Deleted!', 'Successfully!');
           this.fetchVideos();
         });
       }

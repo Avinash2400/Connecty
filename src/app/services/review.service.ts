@@ -37,4 +37,8 @@ export class ReviewService {
   uploadAvatar(file: any) {
     return this.http.post(app_config.api_url + '/util/addimg', file);
   }
+
+  addUpdate(id, data) {
+    return this.http.put(this.url + '/pushupdate/' + id, data);
+  }
 }

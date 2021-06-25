@@ -56,8 +56,9 @@ export class AddReviewComponent implements OnInit {
 
   captureLocation() {
     this.locationService.detectLocation((pos) => {
-      console.log(pos.coords);
-      this.Coords = pos.coords;
+      this.Coords['logitude'] = pos.coords.longitude;
+      this.Coords['latitude'] = pos.coords.latitude;
+      console.log(this.Coords);
       this.setLocation = true;
     });
   }
@@ -70,6 +71,7 @@ export class AddReviewComponent implements OnInit {
     data['provider'] = formdata.provider;
 
     formdata.data = data;
+    console.log(data);
 
     this.reviewService.addReview(formdata).subscribe((data) => {
       console.log(data);
