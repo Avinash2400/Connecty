@@ -12,41 +12,50 @@
 
         <nb-card class="mt-4" *ngIf="reviewList">
             <nb-card-body>
-                <div class="review mt-5" *ngFor="let review of reviewList">
+                <div class="review mt-5" *ngFor="let review of reviewList;let i = index;">
 
                     <div class="row">
-                        <div class="col-md-8" style="border-right: 1px solid rgb(226, 226, 226);">
+                        <div class="col-md" style="border-right: 1px solid rgb(226, 226, 226);">
                             <h3>{{review.title}}</h3>
                             <p>{{review.description}}</p>
+
+                            <div class="row">
+                                <div class="col-1">
+                                    <span>{{review.upvotes.length}}</span>
+                                    <nb-icon icon="arrow-upward-outline" (click)="addUpvote(i)"></nb-icon>
+                                </div>
+                                <div class="col">
+                                    <span>{{review.downvotes.length}}</span>
+                                    <nb-icon icon="arrow-downward-outline" (click)="addDownvote(i)"></nb-icon>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <nb-card accent="danger">
-                                <nb-card-body style="height: 550px;">
+                                <nb-card-body style="height: 100px;">
                                     <h3>Speed</h3>
-                                    <div style="margin: auto;">
-                                        <rg-gauge-chart [canvasWidth]="300" [needleValue]="65"
-                                            [centralLabel]="'100 mb/s'" [options]="options" [bottomLabel]="'FAST'">
+                                    <div style="margin-left: 20px;">
+                                        <rg-gauge-chart [canvasWidth]="200" [needleValue]="65"
+                                            [centralLabel]="review.data.speed+' mb/s'" [options]="options"
+                                            [bottomLabel]="'FAST'">
                                         </rg-gauge-chart>
                                     </div>
 
                                 </nb-card-body>
                             </nb-card>
                             <nb-card accent="primary">
-                                <nb-card-body>
-                                    <h3>Loation</h3>
+                                <nb-card-body style="height: 550px;">
+                                    <h3>Location</h3>
+                                    <!-- <agm-map [latitude]="review.data.location.latitude"
+                                        [longitude]="review.data.location.logitude" [mapTypeId]="'satellite'">
+                                    </agm-map> -->
+
                                 </nb-card-body>
                             </nb-card>
                         </div>
                     </div>
 
                 </div>
-            </nb-card-body>
-        </nb-card>
-    </div>
-    <div class="col-md-4">
-        <nb-card>
-            <nb-card-body>
-                <p>Side Panel</p>
             </nb-card-body>
         </nb-card>
     </div>
