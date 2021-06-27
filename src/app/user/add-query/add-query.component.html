@@ -1,16 +1,16 @@
 <nb-card ngsReveal>
-    <nb-card-header>
-      <p class="exp-header text-center mt-4 mb-4 w-100">Post And Request Novels</p>
-    </nb-card-header>
-    <nb-card-body>
-      <mat-form-field class="mt-5 w-100" appearance="outline">
-        <mat-label>Title</mat-label>
-        <input matInput type="text" #title [(ngModel)]="enteredTitle">
-      </mat-form-field>
-      <mat-form-field class="mt-2 w-100" appearance="outline">
-        <mat-label>Description</mat-label>
-        <textarea matInput rows="6" #description [(ngModel)]="enteredContent"></textarea>
-      </mat-form-field>
-      <button mat-raised-button (click)="onAddPost()">Save Post</button>
-    </nb-card-body>
-  </nb-card>
+  <nb-card-header>
+    <p class="text-center h2">Add New Query</p>
+  </nb-card-header>
+  <nb-card-body>
+    <mat-form-field class="mt-5 w-100" appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" #title [(ngModel)]="enteredTitle">
+    </mat-form-field>
+    <mat-form-field class="mt-2 w-100" appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput rows="6" #description [(ngModel)]="enteredContent"></textarea>
+    </mat-form-field>
+    <button nbButton (click)="onAddPost()">Save Post</button>
+  </nb-card-body>
+</nb-card>

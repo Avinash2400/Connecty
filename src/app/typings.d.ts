@@ -1,1 +1,1 @@
-declare var googlemaps;
+// declare var googlemaps;

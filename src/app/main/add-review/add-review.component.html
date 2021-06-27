@@ -20,6 +20,11 @@
                         <textarea rows="6" type="text" matInput formControlName="description"></textarea>
                     </mat-form-field>
 
+                    <mat-form-field appearance="outline" class="mt-1 w-100">
+                        <mat-label>Address</mat-label>
+                        <textarea rows="6" type="text" matInput formControlName="address"></textarea>
+                    </mat-form-field>
+
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Location</h4>
@@ -27,8 +32,8 @@
                             <button type="button" nbButton *ngIf="!setLocation" class="w-100"
                                 (click)="captureLocation()">Capture</button>
                             <div class="location" *ngIf="setLocation">
-                                <p class="lat">{{Coords.latitude}}</p>
-                                <p class="long">{{Coords.longitude}}</p>
+                                <a [href]="'https://www.google.com/maps/@'+Coords.latitude+','+Coords.longitude+',21z'"
+                                    target="_blank">View On Google Map</a>
                             </div>
                         </div>
                         <div class="col-md-6" style="height: 550px;">
@@ -37,8 +42,8 @@
                             <button type="button" nbButton *ngIf="!setSpeed" class="w-100"
                                 (click)="captureSpeed()">Capture</button>
                             <div class="speed" *ngIf="setSpeed">
-                                <rg-gauge-chart [canvasWidth]="300" [needleValue]="Speed" [centralLabel]="Speed+' mb/s'"
-                                    [options]="options" [bottomLabel]="'FAST'">
+                                <rg-gauge-chart [canvasWidth]="300" [needleValue]="Speed/10"
+                                    [centralLabel]="Speed/10+' mb/s'" [options]="options" [bottomLabel]="'FAST'">
                                 </rg-gauge-chart>
                             </div>
                         </div>

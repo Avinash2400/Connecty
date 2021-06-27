@@ -1,10 +1,12 @@
 <div class="col-md-11">
     <div class="row">
-        <div class="col-md-6">
-
+        <div class="col-md-6 mt-5">
+            <img src="https://pixfeeds.com/images/topic/3747/1200-3747-broadband-internet-photo2.jpg" class="img-fluid"
+                alt="">
         </div>
         <div class="col-md-6">
-            <nb-card style="margin-top:10%;border-radius: 0.5rem; box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);">
+            <nb-card
+                style="margin-top:10%;border-radius: 0.5rem; box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);">
                 <nb-card-body style="padding: 2rem;">
                     <form [formGroup]="signupform" (ngSubmit)="submitSignupForm()">
                         <h3 class="text-center">Signup Here</h3>
@@ -16,17 +18,15 @@
                                     <input type="text" matInput formControlName="fullname">
                                 </mat-form-field>
                             </div>
-                            
+
                             <div class="col-md-6">
                                 <mat-form-field class="mt-2 w-100" appearance="outline">
                                     <mat-label>Email</mat-label>
                                     <input type="email" matInput formControlName="email">
                                 </mat-form-field>
                             </div>
-            
-                            
                         </div>
-                        
+
                         <div class="row">
                             <div class="col-md-6">
                                 <mat-form-field class="mt-2 w-100" appearance="outline">
@@ -38,10 +38,10 @@
                                 <mat-form-field class="mt-2 w-100" appearance="outline">
                                     <mat-label>Confirm Password</mat-label>
                                     <input type="password" matInput formControlName="confirm">
-                                </mat-form-field>    
+                                </mat-form-field>
                             </div>
                         </div>
-        
+
                         <div class="row">
                             <div class="col-md-6">
                                 <mat-form-field class="mt-2 w-100" appearance="outline">
@@ -55,13 +55,14 @@
                             </div>
                         </div>
                         <img [src]="imgURL" *ngIf="imgURL" alt="" class="img-fluid mt-4">
-                        
+
                         <button class="w-100 mt-5" nbButton status="primary">Submit</button>
 
                     </form>
                     <div class="mt-3">
-                        
-                        <a style="font-family: Roboto;text-decoration: none;" [routerLink]="['/app/signin']">Already Registered? Login Here</a>
+
+                        <a style="font-family: Roboto;text-decoration: none;" [routerLink]="['/app/signin']">Already
+                            Registered? Login Here</a>
                         <!-- <div class="float-end">
                             <a style="font-family: Roboto;text-decoration: none;" [routerLink]="['/app/reset']">Forgot Password?</a>
                         </div> -->

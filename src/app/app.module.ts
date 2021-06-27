@@ -37,6 +37,7 @@ import { AddQueryComponent } from './user/add-query/add-query.component';
 import { ViewQueriesComponent } from './view-queries/view-queries.component';
 import { ReviewDetailsComponent } from './main/review-details/review-details.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,9 @@ import { ProfileComponent } from './profile/profile.component';
     NbEvaIconsModule,
     NbToastrModule.forRoot(),
     GaugeChartModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAKttDjtVmqza2lXAYiajnIilrF8RWDEv8',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

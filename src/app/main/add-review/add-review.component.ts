@@ -50,6 +50,7 @@ export class AddReviewComponent implements OnInit {
       reply: Array,
       upvotes: Array,
       downvotes: Array,
+      address: '',
       provider: '',
     });
   }
@@ -69,6 +70,7 @@ export class AddReviewComponent implements OnInit {
     data['speed'] = this.Speed;
     data['location'] = this.Coords;
     data['provider'] = formdata.provider;
+    data['address'] = formdata.address;
 
     formdata.data = data;
     console.log(data);
